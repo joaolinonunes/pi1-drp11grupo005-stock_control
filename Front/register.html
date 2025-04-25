@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registro | Projeto Integrador</title>
+
+    <!-- Tabler Core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/css/tabler.min.css">
+
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="d-flex flex-column">
+    <div class="page page-center">
+        <div class="container container-tight py-4">
+            <div class="text-center mb-4">
+                <h1 class="navbar-brand navbar-brand-autodark">
+                    <span class="fw-bold fs-1">Projeto Integrador</span>
+                </h1>
+            </div>
+            <div class="card card-md">
+                <div class="card-body">
+                    <h2 class="h2 text-center mb-4">Criar Nova Conta</h2>
+                    <form id="register-form" action="#" method="post" autocomplete="off" novalidate>
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label class="form-label">Nome</label>
+                                <input type="text" id="first-name" class="form-control" placeholder="Digite seu nome">
+                                <div class="invalid-feedback">Nome é obrigatório</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Sobrenome</label>
+                                <input type="text" id="last-name" class="form-control" placeholder="Digite seu sobrenome">
+                                <div class="invalid-feedback">Sobrenome é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="seu@email.com">
+                            <div class="invalid-feedback">Por favor, insira um email válido</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Senha</label>
+                            <div class="input-group">
+                                <input type="password" id="password" class="form-control" placeholder="Senha" autocomplete="off">
+                                <span class="input-group-text">
+                                    <button type="button" class="switch-icon switch-icon-flip" data-bs-toggle="switch-icon" title="Mostrar senha"
+                                    id="toggle-password">
+                                        <span class="switch-icon-a text-secondary">
+                                            <!-- Lock Icon -->
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-lock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" /><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M8 11v-4a4 4 0 1 1 8 0v4" /></svg>
+                                        </span>
+                                        <span class="switch-icon-b text-blue">
+                                            <!-- Lock-Open Icon -->
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-lock-open"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" /><path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M8 11v-5a4 4 0 0 1 8 0" /></svg>
+                                        </span>
+                                    </button>
+                                </span>
+                            </div>
+                            <div class="invalid-feedback">Senha deve ter pelo menos 6 caracteres</div>
+                            <div class="form-hint">A senha deve ter pelo menos 6 caracteres</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Confirmar Senha</label>
+                            <div class="input-group">
+                                <input type="password" id="confirm-password" class="form-control" placeholder="Confirme sua senha" autocomplete="off">
+                                <span class="input-group-text">
+                                    <button type="button" class="switch-icon switch-icon-flip" data-bs-toggle="switch-icon" title="Mostrar senha"
+                                    id="toggle-confirm-password">
+                                        <span class="switch-icon-a text-secondary">
+                                            <!-- Lock Icon -->
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-lock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" /><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M8 11v-4a4 4 0 1 1 8 0v4" /></svg>
+                                        </span>
+                                        <span class="switch-icon-b text-blue">
+                                            <!-- Lock-Open Icon -->
+                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-lock-open"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" /><path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M8 11v-5a4 4 0 0 1 8 0" /></svg>
+                                        </span>
+                                    </button>
+                                </span>
+                            </div>
+                            <div class="invalid-feedback">As senhas não coincidem</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-check">
+                                <input type="checkbox" id="terms" class="form-check-input">
+                                <span class="form-check-label">Concordo com os <a href="#" tabindex="-1">termos e condições</a></span>
+                                <div class="invalid-feedback">Você deve concordar com os termos para continuar</div>
+                            </label>
+                        </div>
+
+                        <div class="alert alert-danger d-none" id="register-error" role="alert">
+                            <!-- Alert-Circle Icon -->
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-alert-circle me-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>
+                            <span id="error-message">Ocorreu um erro durante o registro.</span>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-primary w-100">
+                                Criar Conta
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center text-muted mt-3">
+                Já possui uma conta? <a href="index.html" tabindex="-1">Entrar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabler Core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/js/tabler.min.js"></script>
+
+    <!-- Script para controlar o registro -->
+    <script src="js/register.js"></script>
+</body>
+
+</html>
