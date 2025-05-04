@@ -23,12 +23,32 @@
                     <td><?= h($produto->nome) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Tipo Unidade') ?></th>
+                    <td><?= h($produto->tipo_unidade) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Condicao') ?></th>
+                    <td><?= h($produto->condicao) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Id Produto') ?></th>
                     <td><?= $this->Number->format($produto->id_produto) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Id Fornecedor') ?></th>
+                    <td><?= $produto->id_fornecedor === null ? '' : $this->Number->format($produto->id_fornecedor) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Qtd Estoque') ?></th>
+                    <td><?= $produto->qtd_estoque === null ? '' : $this->Number->format($produto->qtd_estoque) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Data Cadastro') ?></th>
                     <td><?= h($produto->data_cadastro) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Validade') ?></th>
+                    <td><?= h($produto->validade) ?></td>
                 </tr>
             </table>
         </div>

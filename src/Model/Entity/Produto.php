@@ -11,6 +11,11 @@ use Cake\ORM\Entity;
  * @property int $id_produto
  * @property string $nome
  * @property \Cake\I18n\DateTime|null $data_cadastro
+ * @property int|null $id_fornecedor
+ * @property int|null $qtd_estoque
+ * @property string|null $tipo_unidade
+ * @property string|null $condicao
+ * @property \Cake\I18n\Date|null $validade
  */
 class Produto extends Entity
 {
@@ -26,5 +31,10 @@ class Produto extends Entity
     protected array $_accessible = [
         'nome' => true,
         'data_cadastro' => true,
+        'id_fornecedor' => true,
+        'qtd_estoque' => true,
+        'tipo_unidade' => true,
+        'condicao' => true,
+        'validade' => true,
     ];
 }

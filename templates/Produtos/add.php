@@ -19,6 +19,11 @@
                 <?php
                     echo $this->Form->control('nome');
                     echo $this->Form->control('data_cadastro', ['empty' => true]);
+                    echo $this->Form->control('id_fornecedor');
+                    echo $this->Form->control('qtd_estoque');
+                    echo $this->Form->control('tipo_unidade');
+                    echo $this->Form->control('condicao');
+                    echo $this->Form->control('validade', ['empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

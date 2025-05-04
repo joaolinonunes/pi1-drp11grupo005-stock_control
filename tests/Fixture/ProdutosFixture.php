@@ -21,7 +21,12 @@ class ProdutosFixture extends TestFixture
             [
                 'id_produto' => 1,
                 'nome' => 'Lorem ipsum dolor sit amet',
-                'data_cadastro' => '2025-04-29 00:23:29',
+                'data_cadastro' => '2025-05-03 20:25:19',
+                'id_fornecedor' => 1,
+                'qtd_estoque' => 1,
+                'tipo_unidade' => 'Lorem ipsum dolor sit amet',
+                'condicao' => 'Lorem ipsum dolor sit amet',
+                'validade' => '2025-05-03',
             ],
         ];
         parent::init();

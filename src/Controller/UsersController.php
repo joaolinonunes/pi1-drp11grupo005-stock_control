@@ -46,6 +46,9 @@ class UsersController extends AppController
         if ($result && $result->isValid()) {
             $this->Authentication->logout();
 
+            // Limpa mensagens flash antes de redirecionar
+            $this->request->getSession()->delete('Flash');
+
             return $this->redirect(['controller' => 'Users', 'action' => 'login']);
         }
     }

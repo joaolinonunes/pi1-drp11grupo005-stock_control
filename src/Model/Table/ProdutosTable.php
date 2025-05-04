@@ -60,6 +60,28 @@ class ProdutosTable extends Table
             ->dateTime('data_cadastro')
             ->allowEmptyDateTime('data_cadastro');
 
+        $validator
+            ->integer('id_fornecedor')
+            ->allowEmptyString('id_fornecedor');
+
+        $validator
+            ->integer('qtd_estoque')
+            ->allowEmptyString('qtd_estoque');
+
+        $validator
+            ->scalar('tipo_unidade')
+            ->maxLength('tipo_unidade', 50)
+            ->allowEmptyString('tipo_unidade');
+
+        $validator
+            ->scalar('condicao')
+            ->maxLength('condicao', 100)
+            ->allowEmptyString('condicao');
+
+        $validator
+            ->date('validade')
+            ->allowEmptyDate('validade');
+
         return $validator;
     }
 }
