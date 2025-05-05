@@ -10,6 +10,11 @@
     <!-- Tabler Core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/css/tabler.min.css" crossorigin="anonymous">
 
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-qHuVd85flbcIw6Nh8yy/7PP9V2L2gTwF4t2QzEfsPDi7gC7PRflT+kP8N1ijDgkV" crossorigin="anonymous">
+    <!-- linke para funcionar os icones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
     <!-- CSS Custom -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -82,11 +87,19 @@
 
                     <!-- Botão Sair -->
                     <div class="nav-item">
-                        <?= $this->Html->link(
-                            'Sair <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>',
-                            ['controller' => 'Users', 'action' => 'logout'],
-                            ['escape' => false, 'class' => 'btn btn-outline-danger', 'aria-label' => 'Sair']
-                        ) ?>
+                    <?= $this->Html->link(
+                        '<span class="d-inline-flex align-items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-logout">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                            <path d="M9 12h12l-3 -3" />
+                            <path d="M18 15l3 -3" />
+                            </svg>
+                            Sair
+                        </span>',
+                        ['controller' => 'Users', 'action' => 'logout'],
+                        ['escape' => false, 'class' => 'btn btn-outline-danger', 'aria-label' => 'Sair']
+                    ) ?>
                     </div>
                 </div>
             </div>

@@ -29,13 +29,13 @@
                 <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                     <span class="fw-bold">Projeto Integrador</span>
                 </h1>
-                <div class="navbar-nav flex-row order-md-last">
+                <!-- <div class="navbar-nav flex-row order-md-last"> -->
                     <!-- Dropdown Notificação -->
-                    <div class="nav-item dropdown d-none d-md-flex me-3">
+                    <!-- <div class="nav-item dropdown d-none d-md-flex me-3">
                         <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
-                            aria-label="Mostrar notificações">
+                            aria-label="Mostrar notificações">-->
                             <!-- Bell icon -->
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                            <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
 
                             <span class="status-dot status-dot-animated bg-red"
                                 style="position: absolute; right: 0; top: 0;"></span>
@@ -83,16 +83,16 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Botão Sair -->
-                    <div class="nav-item">
-                        <a href="index.html" class="btn btn-outline-danger" aria-label="Sair">
+                    <!--<div class="nav-item">
+                        <a href="index.html" class="btn btn-outline-danger" aria-label="Sair"> -->
                             <!-- Logout Icon -->
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
+                            <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
                             Sair
                         </a>
-                    </div>
-                </div>
+                    </div> 
+                </div> -->
             </div>
         </header>
 
@@ -102,13 +102,22 @@
                     <div class="container-xl">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="dashboard.html" class="nav-link">
-                                    <span class="nav-link-icon d-md-none d-lg-inline-flex">
-                                        <!-- Home Icon -->
-                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
-                                    </span>
-                                    <div class="nav-link-title">Dashboard</div>
-                                </a>
+                            <?= $this->Html->link(
+                            '<span class="nav-link-icon d-md-none d-lg-inline-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-home">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                </svg>
+                            </span>
+                            <div class="nav-link-title">Dashboard</div>',
+                                ['controller' => 'Dashboard', 'action' => 'index'],
+                                ['class' => 'nav-link', 'escape' => false]
+                            ) ?>
                             </li>
                             <li class="nav-item active">
                                 <a href="products.html" class="nav-link">
@@ -120,13 +129,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="suppliers.html" class="nav-link">
-                                    <span class="nav-link-icon d-md-none d-lg-inline-flex">
+                                <?= $this->Html->link(
+                                    '<span class="nav-link-icon d-md-none d-lg-inline-flex">
                                         <!-- Truck-Delivery Icon -->
-                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-truck-delivery"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" /><path d="M3 9l4 0" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-truck-delivery"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" /><path d="M3 9l4 0" /></svg>
                                     </span>
-                                    <div class="nav-link-title">Fornecedores</div>
-                                </a>
+                                    <div class="nav-link-title">Fornecedores</div>',
+                                        ['controller' => 'Fornecedores', 'action' => 'index'],
+                                        ['escape' => false, 'class' => 'nav-link']
+                                ) ?>
                             </li>
                         </ul>
                     </div>
@@ -156,7 +167,7 @@
                                     data-bs-target="#add-product-modal" aria-label="Create new product">
                                     <!-- Plus Icon -->
                                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
-                                </a>
+                                </a>                               
                             </div>
                         </div>
                     </div>
@@ -194,7 +205,7 @@
                                             <td><?= h($produto->qtd_estoque) ?></td>
                                             <td><?= h($produto->tipo_unidade) ?></td>
                                             <td>
-                                                <?php if ($produto->quantidade_estoque <= 2): ?>
+                                                <?php if ($produto->qtd_estoque <= 2): ?>
                                                     <span class="status-dot status-orange me-1"></span> Pouco estoque
                                                 <?php else: ?>
                                                     <span class="status-dot status-green me-1"></span> Em estoque
@@ -205,17 +216,17 @@
                                             <td class="table-actions">
                                                 <?= $this->Html->link(
                                                 '<i class="bi bi-pencil"></i>',
-                                                    ['action' => 'edit', $produto->id],
+                                                    ['action' => 'edit', $produto->id_produto],
                                                     ['escape' => false, 'class' => 'btn btn-icon btn-outline-primary', 'title' => 'Editar produto']
                                                 ) ?>
                                                 <?= $this->Html->link(
                                                 '<i class="bi bi-info-circle"></i>',
-                                                    ['action' => 'view', $produto->id],
+                                                    ['action' => 'view', $produto->id_produto],
                                                     ['escape' => false, 'class' => 'btn btn-icon btn-outline-info ms-1', 'title' => 'Ver detalhes']
                                                 ) ?>
                                                 <?= $this->Form->postLink(
                                                 '<i class="bi bi-trash"></i>',
-                                                    ['action' => 'delete', $produto->id],
+                                                    ['action' => 'delete', $produto->id_produto],
                                                          [
                                                             'escape' => false,
                                                             'class' => 'btn btn-icon btn-outline-danger ms-1',
