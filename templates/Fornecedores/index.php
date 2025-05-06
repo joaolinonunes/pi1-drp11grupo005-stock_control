@@ -29,6 +29,79 @@
                 <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                     <span class="fw-bold">Projeto Integrador</span>
                 </h1>
+                <div class="navbar-nav flex-row order-md-last">
+                    <!-- Dropdown Notificação -->
+                    <div class="nav-item dropdown d-none d-md-flex me-3">
+                        <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
+                            aria-label="Mostrar notificações">
+                            <!-- Bell icon -->
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+
+                            <span class="status-dot status-dot-animated bg-red"
+                                style="position: absolute; right: 0; top: 0;"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Notificações</h3>
+                                </div>
+                                <div class="list-group list-group-flush list-group-hoverable">
+                                    <div class="list-group-item">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto"><span
+                                                    class="status-dot status-dot-animated bg-warning d-block"></span></div>
+                                            <div class="col text-truncate">
+                                                <a href="#" class="text-body d-block">POUCO ESTOQUE</a>
+                                                <div class="d-block text-secondary text-truncate mt-n1">
+                                                    Produto Peito de Frango está com pouco estoque (2)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto"><span class="status-dot status-dot-animated bg-danger d-block"></span></div>
+                                            <div class="col text-truncate">
+                                                <a href="#" class="text-body d-block">VALIDADE EXPIRADA</a>
+                                                <div class="d-block text-secondary text-truncate mt-n1">
+                                                    Peito de Frango teve sua validade expirada
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto"><span class="status-dot status-dot-animated bg-warning d-block"></span></div>
+                                            <div class="col text-truncate">
+                                                <a href="#" class="text-body d-block">VALIDADE EXPIRANDO</a>
+                                                <div class="d-block text-secondary text-truncate mt-n1">
+                                                    Contra Filé Bovino está no último dia de validade
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão Sair -->
+                    <div class="nav-item">
+                    <?= $this->Html->link(
+                        '<span class="d-inline-flex align-items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-logout">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                            <path d="M9 12h12l-3 -3" />
+                            <path d="M18 15l3 -3" />
+                            </svg>
+                            Sair
+                        </span>',
+                        ['controller' => 'Users', 'action' => 'logout'],
+                        ['escape' => false, 'class' => 'btn btn-outline-danger', 'aria-label' => 'Sair']
+                    ) ?>
+                    </div>
+                </div>
         </header>
 
         <div class="navbar-expand-md">

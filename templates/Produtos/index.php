@@ -29,13 +29,13 @@
                 <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                     <span class="fw-bold">Projeto Integrador</span>
                 </h1>
-                <!-- <div class="navbar-nav flex-row order-md-last"> -->
+                <div class="navbar-nav flex-row order-md-last">
                     <!-- Dropdown Notificação -->
-                    <!-- <div class="nav-item dropdown d-none d-md-flex me-3">
+                    <div class="nav-item dropdown d-none d-md-flex me-3">
                         <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
-                            aria-label="Mostrar notificações">-->
+                            aria-label="Mostrar notificações">
                             <!-- Bell icon -->
-                            <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
 
                             <span class="status-dot status-dot-animated bg-red"
                                 style="position: absolute; right: 0; top: 0;"></span>
@@ -83,16 +83,25 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+
                     <!-- Botão Sair -->
-                    <!--<div class="nav-item">
-                        <a href="index.html" class="btn btn-outline-danger" aria-label="Sair"> -->
-                            <!-- Logout Icon -->
-                            <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
+                    <div class="nav-item">
+                    <?= $this->Html->link(
+                        '<span class="d-inline-flex align-items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-logout">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                            <path d="M9 12h12l-3 -3" />
+                            <path d="M18 15l3 -3" />
+                            </svg>
                             Sair
-                        </a>
-                    </div> 
-                </div> -->
+                        </span>',
+                        ['controller' => 'Users', 'action' => 'logout'],
+                        ['escape' => false, 'class' => 'btn btn-outline-danger', 'aria-label' => 'Sair']
+                    ) ?>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -286,7 +295,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <!-- Formulário de adição de produto -->
-                <form action="#" method="post">
+                <form action="<?= $this->Url->build(['controller' => 'Produtos', 'action' => 'add']) ?>" method="post">
                     <div class="modal-header">
                         <h5 class="modal-title">Adicionar Novo Produto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
@@ -295,46 +304,30 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">Produto</label>
-                            <input type="text" class="form-control" name="product-name" placeholder="Nome do produto">
+                            <input type="text" class="form-control" name="nome" placeholder="Nome do produto">
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="mb-3">
-                                    <label class="form-label">Preço de Compra</label>
-                                    <input type="text" class="form-control" name="p-price" placeholder="(0,00)">
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="mb-3">
-                                    <label class="form-label">Preço de Venda</label>
-                                    <input type="text" class="form-control" name="s-price" placeholder="(0,00)">
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="mb-3">
-                                    <label class="form-label">ID Prod.</label>
-                                    <input type="text" class="form-control" name="products-id" placeholder="00">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="mb-3">
-                                    <label class="form-label">ID Fornecedor</label>
-                                    <input type="text" class="form-control" name="supplier-id" placeholder="F00">
+                                    <label class="form-label">Fornecedor</label>
+                                    <select name="id_fornecedor" class="form-select">
+                                    <option value="">Selecione</option>
+                                        <?php foreach ($fornecedores as $id => $nome): ?>
+                                        <option value="<?= h($id) ?>"><?= h($nome) ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="mb-3">
                                     <label class="form-label">Quantidade Estoque</label>
-                                    <input type="number" min="0" class="form-control" name="product-stock" placeholder="0">
+                                    <input type="number" min="0" class="form-control" name="qtd_estoque" placeholder="0">
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="mb-3">
                                     <label class="form-label">Tipo de Unidade</label>
-                                    <select class="form-select" name="unit-type">
+                                    <select class="form-select" name="tipo_unidade">
                                         <option value="kg">Kg</option>
                                         <option value="pct">Pct</option>
                                         <option value="un">Unidade</option>
@@ -345,7 +338,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4">
+                            <!--<div class="col-lg-4">
                                 <div class="mb-3">
                                     <label class="form-label">Condição</label>
                                     <select class="form-select" name="status">
@@ -354,11 +347,11 @@
                                         <option value="3">Pouco estoque</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-lg-4">
                                 <div class="mb-3">
                                     <label class="form-label">Data de Validade</label>
-                                    <input type="date" class="form-control" name="product-expiration-date">
+                                    <input type="date" class="form-control" name="validade">
                                 </div>
                             </div>
                         </div>

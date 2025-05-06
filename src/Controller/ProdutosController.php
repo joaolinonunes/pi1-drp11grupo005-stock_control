@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Produtos Controller
@@ -21,6 +23,14 @@ class ProdutosController extends AppController
         $produtos = $this->paginate($query);
 
         $this->set(compact('produtos'));
+
+        $fornecedoresTable = TableRegistry::getTableLocator()->get('Fornecedores');
+        $fornecedores = $fornecedoresTable->find('list', [
+            'keyField' => 'id_fornecedor',
+            'valueField' => 'nome'
+        ])->toArray();
+
+            $this->set(compact('fornecedores'));
     }
 
     /**
