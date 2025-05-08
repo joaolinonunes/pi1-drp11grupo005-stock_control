@@ -24,13 +24,63 @@ class ProdutosController extends AppController
 
         $this->set(compact('produtos'));
 
+        //setando a lista de fornecedores para preencher na criação de produtos
         $fornecedoresTable = TableRegistry::getTableLocator()->get('Fornecedores');
         $fornecedores = $fornecedoresTable->find('list', [
             'keyField' => 'id_fornecedor',
             'valueField' => 'nome'
         ])->toArray();
 
-            $this->set(compact('fornecedores'));
+        $this->set(compact('fornecedores'));
+
+        // Notificações
+        $hoje = date('Y-m-d');
+        $amanha = date('Y-m-d', strtotime('+1 day'));
+
+        $notificacoes = [];
+
+        // Pouco ou nenhum estoque (limiar: 5 unidades)
+        $baixoEstoque = $this->Produtos->find()
+        ->where(['qtd_estoque <=' => 3])
+        ->all();
+
+        foreach ($baixoEstoque as $produto) {
+            $notificacoes[] = [
+                'tipo' => 'pouco_estoque',
+                'mensagem' => "Produto {$produto->nome} está com pouco estoque ({$produto->qtd_estoque})",
+                'cor' => 'bg-warning'
+            ];
+        }
+
+        // Validade expirada
+        $expirados = $this->Produtos->find()
+            ->where(function ($exp) use ($hoje) {
+                return $exp->lt('validade', $hoje);
+            })
+            ->all();
+
+        foreach ($expirados as $produto) {
+            $notificacoes[] = [
+                'tipo' => 'validade_expirada',
+                'mensagem' => "{$produto->nome} teve sua validade expirada",
+                'cor' => 'bg-danger'
+            ];
+        }
+
+        // Validade expira hoje
+        $vencendoHoje = $this->Produtos->find()
+            ->where(['validade' => $hoje])
+            ->all();
+
+        foreach ($vencendoHoje as $produto) {
+            $notificacoes[] = [
+                'tipo' => 'validade_vencendo',
+                'mensagem' => "{$produto->nome} está no último dia de validade",
+                'cor' => 'bg-warning'
+            ];
+        }   
+
+            $this->set(compact('notificacoes'));
     }
 
     /**

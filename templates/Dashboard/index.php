@@ -45,42 +45,27 @@
                                 <div class="card-header">
                                     <h3 class="card-title">Notificações</h3>
                                 </div>
+                                <?php if (!empty($notificacoes)): ?>
                                 <div class="list-group list-group-flush list-group-hoverable">
-                                    <div class="list-group-item">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto"><span
-                                                    class="status-dot status-dot-animated bg-warning d-block"></span></div>
-                                            <div class="col text-truncate">
-                                                <a href="#" class="text-body d-block">POUCO ESTOQUE</a>
-                                                <div class="d-block text-secondary text-truncate mt-n1">
-                                                    Produto Peito de Frango está com pouco estoque (2)
+                                    <?php foreach ($notificacoes as $n): ?>
+                                        <div class="list-group-item">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <span class="status-dot status-dot-animated <?= h($n['cor']) ?> d-block"></span>
+                                                </div>
+                                                <div class="col text-truncate">
+                                                    <a href="#" class="text-body d-block">
+                                                        <?= strtoupper(str_replace('_', ' ', $n['tipo'])) ?>
+                                                    </a>
+                                                    <div class="d-block text-secondary text-truncate mt-n1">
+                                                        <?= h($n['mensagem']) ?>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="list-group-item">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto"><span class="status-dot status-dot-animated bg-danger d-block"></span></div>
-                                            <div class="col text-truncate">
-                                                <a href="#" class="text-body d-block">VALIDADE EXPIRADA</a>
-                                                <div class="d-block text-secondary text-truncate mt-n1">
-                                                    Peito de Frango teve sua validade expirada
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="list-group-item">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto"><span class="status-dot status-dot-animated bg-warning d-block"></span></div>
-                                            <div class="col text-truncate">
-                                                <a href="#" class="text-body d-block">VALIDADE EXPIRANDO</a>
-                                                <div class="d-block text-secondary text-truncate mt-n1">
-                                                    Contra Filé Bovino está no último dia de validade
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
