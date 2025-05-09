@@ -41,7 +41,7 @@ class ProdutosController extends AppController
 
         // Pouco ou nenhum estoque (limiar: 5 unidades)
         $baixoEstoque = $this->Produtos->find()
-        ->where(['qtd_estoque <=' => 3])
+        ->where(['qtd_estoque <=' => 2])
         ->all();
 
         foreach ($baixoEstoque as $produto) {
