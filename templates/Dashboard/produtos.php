@@ -323,6 +323,16 @@
                             </div>
                         </div>
                         <div class="row">
+                            <!--<div class="col-lg-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Condição</label>
+                                    <select class="form-select" name="status">
+                                        <option value="1">Em estoque</option>
+                                        <option value="2">Sem estoque</option>
+                                        <option value="3">Pouco estoque</option>
+                                    </select>
+                                </div>
+                            </div>-->
                             <div class="col-lg-4">
                                 <div class="mb-3">
                                     <label class="form-label">Data de Validade</label>

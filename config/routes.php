@@ -65,6 +65,8 @@ return function (RouteBuilder $routes): void {
          */
         $builder->connect('/pages/*', 'Pages::display');
 
+        $builder->connect('/dashboard/produtos/:tipo', ['controller' => 'Dashboard', 'action' => 'produtos'])
+            ->setPass(['tipo']);
         /*
          * Connect catchall routes for all controllers.
          *
