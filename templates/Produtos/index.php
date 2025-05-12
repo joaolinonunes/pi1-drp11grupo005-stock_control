@@ -205,7 +205,7 @@
                                                     <span class="status-dot status-green me-1"></span> Em estoque
                                                 <?php endif; ?>
                                             </td>
-                                            <td><span class="text-muted"><?= $produto->data_cadastro->format('d/m/Y, H:i') ?></span></td>
+                                            <td><span class="text-muted"><?= $produto->data_cadastro ? $produto->data_cadastro->format('d/m/Y, H:i') : 'sem data' ?></span></td>
                                             <td><span class="text-muted"><?= $produto->validade ? $produto->validade->format('d/m/Y') : '-' ?></span></td>
                                             <td class="table-actions">
                                                 <?= $this->Html->link(

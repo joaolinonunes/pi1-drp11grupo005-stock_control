@@ -37,7 +37,7 @@
                     <div class="btn-list">
                         <?= $this->Html->link(
                             'Voltar',
-                            ['action' => 'produtos'],
+                            ['action' => 'index'],
                             ['class' => 'btn btn-secondary']
                         ) ?>
                         <?= $this->Form->postLink(
@@ -99,20 +99,13 @@
                                 </select>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-3">
-                            <div class="mb-3">
-                                <label class="form-label">Condição</label>
-                                <input type="text" class="form-control" name="condicao" value="<?= h($produto->condicao) ?>">
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="mb-3">
                                 <label class="form-label">Data de Cadastro</label>
-                                <input type="date" class="form-control" name="data_cadastro" value="<?= $produto->data_cadastro ? $produto->data_cadastro->format('Y-m-d') : '' ?>">
+                                <input type="ddatetime-local" class="form-control" name="data_cadastro" value="<?= $produto->data_cadastro ? $produto->data_cadastro->format('Y-m-d\TH:i') : '' ?>">
                             </div>
                         </div>
                         

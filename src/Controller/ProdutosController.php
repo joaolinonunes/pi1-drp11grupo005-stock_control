@@ -125,9 +125,12 @@ class ProdutosController extends AppController
      */
     public function edit($id = null)
     {
+        $fornecedoresTable = TableRegistry::getTableLocator()->get('Fornecedores');
         $produto = $this->Produtos->get($id, contain: []);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $produto = $this->Produtos->patchEntity($produto, $this->request->getData());
+                    //dd($produto->getErrors());
             if ($this->Produtos->save($produto)) {
                 $this->Flash->success(__('The produto has been saved.'));
 
@@ -135,7 +138,12 @@ class ProdutosController extends AppController
             }
             $this->Flash->error(__('The produto could not be saved. Please, try again.'));
         }
-        $this->set(compact('produto'));
+        $fornecedores = $fornecedoresTable->find('list', [
+        'keyField' => 'id_fornecedor',
+        'valueField' => 'nome'
+        ])->toArray();
+
+        $this->set(compact('produto', 'fornecedores'));
     }
 
     /**

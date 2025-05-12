@@ -170,8 +170,8 @@ class DashboardController extends AppController
         $produto = $produtosTable->get($id, contain: []);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $produto = $this->Produtos->patchEntity($produto, $this->request->getData());
-            if ($this->Produtos->save($produto)) {
+            $produto = $produtosTable->patchEntity($produto, $this->request->getData());
+            if ($produtosTable->save($produto)) {
                 $this->Flash->success(__('The produto has been saved.'));
 
                 return $this->redirect(['action' => 'produtos']);
