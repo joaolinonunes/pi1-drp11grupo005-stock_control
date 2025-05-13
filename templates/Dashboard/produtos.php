@@ -199,11 +199,30 @@
                                             <td><?= h($produto->qtd_estoque) ?></td>
                                             <td><?= h($produto->tipo_unidade) ?></td>
                                             <td>
-                                                <?php if ($produto->qtd_estoque <= 2): ?>
-                                                    <span class="status-dot status-orange me-1"></span> Pouco estoque
-                                                <?php else: ?>
-                                                    <span class="status-dot status-green me-1"></span> Em estoque
-                                                <?php endif; ?>
+                                                <?php
+                                                    $hoje = new \Cake\I18n\FrozenDate();
+                                                    $statusClass = 'status-green';
+                                                    $statusText = 'Em estoque';
+
+                                                    if ($produto->qtd_estoque <= 0) {
+                                                            $statusClass = 'status-red';
+                                                            $statusText = 'Sem estoque';
+                                                    } elseif ($produto->qtd_estoque <= 2) {
+                                                            $statusClass = 'status-orange';
+                                                            $statusText = 'Pouco estoque';
+                                                    }
+
+                                                    if ($produto->validade !== null) {
+                                                        if ($produto->validade < $hoje) {
+                                                            $statusClass = 'status-red';
+                                                            $statusText .= ' / Vencido';
+                                                        } elseif ($produto->validade <= $hoje->addDays(3)) {
+                                                            $statusClass = 'status-orange';
+                                                            $statusText .= ' / Validade próxima';
+                                                        }
+                                                    }
+                                                ?>
+                                                    <span class="status-dot <?= $statusClass ?> me-1"></span> <?= $statusText ?>
                                             </td>
                                             <td><span class="text-muted"><?= $produto->data_cadastro->format('d/m/Y, H:i') ?></span></td>
                                             <td><span class="text-muted"><?= $produto->validade ? $produto->validade->format('d/m/Y') : '-' ?></span></td>

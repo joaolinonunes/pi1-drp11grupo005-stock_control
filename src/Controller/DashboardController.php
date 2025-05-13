@@ -50,7 +50,7 @@ class DashboardController extends AppController
                         'mensagem' => "{$produto->nome} teve sua validade expirada",
                         'cor' => 'bg-danger',
                     ];
-                } elseif ($produto->validade <= $hoje->addDays(2)) {
+                } elseif ($produto->validade <= $hoje->addDays(3)) {
                     $notificacoes[] = [
                         'tipo' => 'validade_expirando',
                         'mensagem' => "{$produto->nome} está nos últimos dias de validade",
@@ -75,7 +75,7 @@ class DashboardController extends AppController
             // Contar produtos com validade próxima (hoje ou nos próximos 2 dias)
             $qtdValidadeProxima = $produtosTable->find()
             ->where(function ($exp, $q) use ($hoje) {
-                return $exp->between('validade', $hoje, $hoje->addDays(2));
+                return $exp->between('validade', $hoje, $hoje->addDays(3));
             })
             ->count();
 
