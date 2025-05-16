@@ -25,7 +25,7 @@ O sistema é dividido em três camadas principais:
 ✅ Registro de entradas e saídas de estoque  
 ✅ Controle de fornecedores  
 ✅ Acompanhamento de datas de vencimento  
-✅ Alertas de estoque baixo *(em desenvolvimento)*  
+✅ Alertas de estoque baixo 
 
 ---
 
